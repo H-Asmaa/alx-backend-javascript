@@ -2,9 +2,11 @@
 export default function getListStudentIds(list) {
   const studentIds = [];
   if (Array.isArray(list)) {
-    Object.keys(list).forEach(((key) => {
-      studentIds.push(list[key].id);
-    }));
+    list.map((student) => {
+      if ('id' in student) {
+        studentIds.push(student.id);
+      }
+    });
   }
   return studentIds;
 }
