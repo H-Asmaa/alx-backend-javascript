@@ -4,10 +4,8 @@ filters trough it. */
 const fs = require('fs');
 
 const countStudents = (path) => {
-  fs.readFile(path, 'utf8', (err, data) => {
-    if (err) {
-      throw new Error('Cannot load the database');
-    }
+  try {
+    const data = fs.readFileSync(path, 'utf8');
     let studentsList = data.split('\n');
     studentsList = studentsList.map((line) => line.split(',')).slice(1, -1);
     const csStudentsList = [];
@@ -23,6 +21,9 @@ const countStudents = (path) => {
     console.log(`Number of students: ${studentsCount}`);
     console.log(`Number of students in CS: ${csStudentsList.length}. List: ${csStudentsList.join(', ')}`);
     console.log(`Number of students in SWE: ${sweStudentsList.length}. List: ${sweStudentsList.join(', ')}`);
-  });
+  } catch (error) {
+    throw new Error('Cannot load the database');
+  }
 };
+
 module.exports = countStudents;
