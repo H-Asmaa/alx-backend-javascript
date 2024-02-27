@@ -1,5 +1,6 @@
 #!/usr/bin/node
-/* The function countStudents  */
+/* The function countStudents that takes content from a database and
+filters trough it. */
 const fs = require('fs');
 
 const countStudents = (path) => {
