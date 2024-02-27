@@ -1,11 +1,11 @@
 #!/usr/bin/node
 /* A script that interracts with the user trough the cli. */
-console.log('Welcome to Holberton School, what is your name?');
+console.log('Welcome to Holberton School, what is your name?\n');
 process.stdin.on('readable', () => {
   const userName = process.stdin.read();
-  if (userName) process.stdout.write(`Your name is: ${userName}\n`);
+  if (userName) process.stdout.write(`Your name is: ${userName}`);
 });
 
 process.stdin.on('end', () => {
-  process.stdout.write('This important software is now closing\n');
+  process.stdout.write('This important software is now closing');
 });
