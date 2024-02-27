@@ -5,12 +5,10 @@ const fs = require('fs');
 
 const countStudents = (path) => {
   try {
-    const data = fs.readFileSync(path, 'utf8');
-    let studentsList = data.split('\n');
-    studentsList = studentsList.map((line) => line.split(',')).slice(1, -1);
+    const data = fs.readFileSync(path, 'utf8').split('\n').map((line) => line.split(',')).slice(1, -1);
     const csStudentsList = [];
     const sweStudentsList = [];
-    for (const list of studentsList) {
+    for (const list of data) {
       if (list[3] === 'CS') {
         csStudentsList.push(list[0]);
       } else {
