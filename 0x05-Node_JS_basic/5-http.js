@@ -43,13 +43,13 @@ const app = http.createServer((req, res) => {
     countStudents(fileName).then((responseBody) => {
       res.end(`This is the list of our students\n${responseBody}`);
     }).catch(() => {
-      res.end('');
+      res.end('This is the list of our students');
     });
   }
 });
 
 app.listen(port, host, () => {
-  console.log(`Server is running on http://${host}:${port}`);
+  console.log('...');
 });
 
 module.exports = app;
