@@ -3,14 +3,14 @@
 ### SETUP AND RUN THE TESTS
 - **STEP 1**
 	As a start run the command `npm init` to generate the package.json file. Then run `npm install`, then `npm install mocha`.
-- **STEP 1**
+- **STEP 2**
 	Add the mocha as a test in the package.json.
 	```json
 	"scripts": {
 		"test": "mocha"
 	},
 	```
-- **STEP 1**
+- **STEP 3**
 	Create a function and create a test for it and save it in the filename.test.js.
 	Then run this command : `npm test filename.test.js`.
 
