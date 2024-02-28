@@ -1,0 +1,7 @@
+// .eslintrc.json
+{
+	"extends": "airbnb-base",
+	"rules": {
+	  // Additional rules can be added here
+	}
+  }
