@@ -42,14 +42,14 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     countStudents(fileName).then((responseBody) => {
       res.end(`This is the list of our students\n${responseBody}`);
-    }).catch(() => {
-      res.end('This is the list of our students');
+    }).catch((error) => {
+      res.end(`This is the list of our students\n${error.message}`);
     });
   }
 });
 
 app.listen(port, host, () => {
-  console.log('...');
+  console.log(`Server is running on http://${host}:${port}`);
 });
 
 module.exports = app;
