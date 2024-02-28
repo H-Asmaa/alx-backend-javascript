@@ -1,6 +1,5 @@
 #!/usr/bin/node
-/* We modified the function taskFirst to instantiate variables using const
-and the function taskNext to instantiate variables using let */
+/* We modified the functions. */
 export function taskFirst() {
   const task = 'I prefer const when I can.';
   return task;
