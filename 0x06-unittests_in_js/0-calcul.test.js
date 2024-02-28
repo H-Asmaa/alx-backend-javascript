@@ -1,7 +1,7 @@
 const calculateNumber = require("./0-calcul.js");
 const assert = require('assert');
 
-describe('Testing the calculateNumber function', function(){
+describe('calculateNumber', function(){
 	it('Testing normal cases...', function(){
 		assert.equal(calculateNumber(1, 3), 4);
 		assert.equal(calculateNumber(1, 3.7), 5);
