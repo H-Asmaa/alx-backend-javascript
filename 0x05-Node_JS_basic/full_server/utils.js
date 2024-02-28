@@ -15,7 +15,7 @@ const readDatabase = (path) => new Promise((resolve, reject) => {
           sweStudentsList.push(list[0]);
         }
       }
-      const allStudent = [csStudentsList, sweStudentsList];
+      const allStudent = { CS: csStudentsList, SWE: sweStudentsList };
       resolve(allStudent);
     }
   });
