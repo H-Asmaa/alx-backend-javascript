@@ -10,6 +10,8 @@ describe('calculateNumber', () => {
   });
   it('Testing pairs...', () => {
     assert.equal(calculateNumber(11.4, 0), 11);
+  });
+  it('Testing pairs...', () => {
     assert.equal(calculateNumber(0, 6.5), 7);
   });
   it('Testing negatives...', () => {
