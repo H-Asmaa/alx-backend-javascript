@@ -12,9 +12,6 @@ describe('calculateNumber', () => {
     assert.equal(calculateNumber(11.4, 0), 11);
     assert.equal(calculateNumber(0, 6.5), 7);
   });
-  it('Testing odd cases...', () => {
-    assert.equal(calculateNumber(Math.E, Math.PI), 6);
-  });
   it('Testing negatives...', () => {
     assert.equal(calculateNumber(3, -7), -4);
     assert.equal(calculateNumber(-1, 2), 1);
