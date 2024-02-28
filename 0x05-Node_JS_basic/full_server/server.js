@@ -9,10 +9,6 @@ const host = 'localhost';
 
 app.use('/', routes);
 
-app.use('/students', routes);
-
-app.use('/students/:major', routes);
-
 app.listen(port, () => {
   console.log(`The app is listening on http://${host}:${port}.`);
 });
