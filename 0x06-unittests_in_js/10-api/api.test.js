@@ -8,19 +8,9 @@ const url = 'http://localhost:7865';
 
 describe('apiTesting /', () => {
   it('Testing correct statusCode...', (done) => {
-    request(`${url}`, (error, response) => {
-      expect(response.status, 200);
-      done();
-    });
-  });
-  it('Testing correct result...', (done) => {
-    request(`${url}`, (error, response) => {
-      expect(response.body).to.deep.equal('Welcome to the payment system');
-      done();
-    });
-  });
-  it('Testing correct log...', (done) => {
-    request(`${url}`, (error, response) => {
+    request('http://localhost:7865/', (error, response) => {
+      expect(response.statusCode).to.equal(200);
+      expect(response.body).to.equal('Welcome to the payment system');
       const consoleLog = sinon.spy(console, 'log');
       expect(consoleLog.calledWith('API available on localhost port 7865'));
       consoleLog.restore();
@@ -31,20 +21,21 @@ describe('apiTesting /', () => {
 
 describe('apiTesting /cart/:ip', () => {
   it('Testing correct id type...', (done) => {
-    request(`${url}/cart/1`, (error, response) => {
-      expect(response.status, 200);
+    request('http://localhost:7865/cart/1', (error, response) => {
+      expect(response.statusCode).to.equal(200);
+      expect(response.body).to.equal('Payment methods for cart 1');
       done();
     });
   });
   it('Testing wrong id type...', (done) => {
-    request(`${url}/cart/hello`, (error, response) => {
-      expect(response.status, 404);
+    request('http://localhost:7865/cart/hello', (error, response) => {
+      expect(response.statusCode).to.equal(404);
       done();
     });
   });
   it('Testing correct content...', (done) => {
-    request(`${url}/cart/1`, (error, response) => {
-      expect(response.body).to.equal('Payment methods for cart 1');
+    request('http://localhost:7865/cart', (error, response) => {
+      expect(response.statusCode).to.equal(404);
       done();
     });
   });
