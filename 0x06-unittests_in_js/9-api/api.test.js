@@ -39,9 +39,9 @@ describe('apiTesting /cart/:ip', () => {
       done();
     });
   });
-  it('Testing correct ip type...', (done) => {
+  it('Testing correct content...', (done) => {
     request('http://localhost:7865/cart/1', (error, response) => {
-      expect(response.body).to.deep.equal('Payment methods for cart 1');
+      expect(response.body).to.equal('Payment methods for cart 1');
       done();
     });
   });
