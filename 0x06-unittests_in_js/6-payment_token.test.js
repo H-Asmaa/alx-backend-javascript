@@ -5,7 +5,7 @@ const getPaymentTokenFromAPI = require('./6-payment_token');
 describe('sendPaymentRequestToApi', () => {
   it('Testing...', (done) => {
     getPaymentTokenFromAPI(true).then(result => {
-		expect(result).to.equal("{data: 'Successful response from the API' }");
+		expect(result).to.deep.equal({data: 'Successful response from the API' });
 		done();
 	});
   });
