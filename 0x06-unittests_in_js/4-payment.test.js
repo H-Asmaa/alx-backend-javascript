@@ -6,7 +6,7 @@ const sendPaymentRequestToApi = require('./3-payment');
 /* eslint-disable */
 describe('sendPaymentRequestToApi', () => {
   it('Testing...', () => {
-	// Spy on the method to check the call args later.
+	// Stub on the method to check the call args later.
 	const stub = sinon.stub(utils, 'calculateNumber').returns(10);
 	// Spy on the console.log.
 	const consoleLog = sinon.spy(console, 'log');
