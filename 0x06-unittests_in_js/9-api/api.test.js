@@ -45,4 +45,10 @@ describe('apiTesting /cart/:ip', () => {
       done();
     });
   });
+  it('Testing correct content...', (done) => {
+    request('http://localhost:7865/cart', (error, response) => {
+      expect(response.status, 404);
+      done();
+    });
+  });
 });
