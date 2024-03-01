@@ -1,5 +1,5 @@
 #!/usr/bin/node
-export default function getBudgetObject(income, gdp, capita) {
+export default (income, gdp, capita) => {
   const budget = {
     income,
     gdp,
@@ -7,4 +7,4 @@ export default function getBudgetObject(income, gdp, capita) {
   };
 
   return budget;
-}
+};
