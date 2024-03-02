@@ -1,1 +1,1 @@
-export default (set, array) => array.some((arrayElem) => set.has(arrayElem));
+export default (set, array) => array.every((arrayElem) => set.has(arrayElem));
