@@ -1,4 +1,3 @@
-#!/usr/bin/node
 export default (promise) => new Promise((resolve, reject) => {
   promise
     .then(() => {
@@ -6,6 +5,6 @@ export default (promise) => new Promise((resolve, reject) => {
       resolve({ status: 200, body: 'success' });
     })
     .catch((error) => {
-      reject(error);
+      reject(new Error(error));
     });
 });
