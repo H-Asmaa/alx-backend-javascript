@@ -1,5 +1,5 @@
 export default (promise) => {
-  promise
+  return promise
     .then(() => ({ status: 200, body: 'success' }))
     .catch(() => new Error())
     .finally(() => {
