@@ -5,6 +5,6 @@ export default (promise) => new Promise((resolve, reject) => {
       resolve({ status: 200, body: 'success' });
     })
     .catch((error) => {
-      reject(new Error(error));
+      reject(new Error(error.message));
     });
 });
